@@ -467,7 +467,7 @@ define([
         WorldWindow.prototype.createContext = function (canvas) {
             // Request a WebGL context with antialiasing is disabled. Antialiasing causes gaps to appear at the edges of
             // terrain tiles.
-            var glAttrs = {antialias: false, stencil: true},
+            var glAttrs = {antialias: false, stencil: true, preserveDrawingBuffer: true},
                 gl = canvas.getContext("webgl", glAttrs);
             if (!gl) {
                 gl = canvas.getContext("experimental-webgl", glAttrs);
